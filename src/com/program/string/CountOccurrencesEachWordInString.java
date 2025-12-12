@@ -55,5 +55,10 @@ public class CountOccurrencesEachWordInString {
             map.put(chr, map.getOrDefault(chr, 0)+1);
         }
         System.out.println("Count of Words in a given string: " + map);
+
+        // Example of how to iterate and print each word and its count
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println("Word: '" + entry.getKey() + "' -> Count: " + entry.getValue());
+        }
     }
 }

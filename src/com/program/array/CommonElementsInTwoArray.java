@@ -18,7 +18,6 @@ public class CommonElementsInTwoArray {
         Set<Integer> set = new HashSet<>(); // Stores elements from array1 for efficient lookup
         Set<Integer> set1 = new HashSet<>(); // Stores the common elements found
 
-
         // Add all elements from array1 to the 'set' for quick checking
         for (int num : array1) {
             set.add(num);

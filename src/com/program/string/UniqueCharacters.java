@@ -17,7 +17,7 @@ public class UniqueCharacters {
             charCount.put(ch, charCount.getOrDefault(ch, 0) + 1);
         }
 
-        StringBuilder stringBuilder = new StringBuilder();
+        // StringBuilder stringBuilder = new StringBuilder(); // This line is not used and can be removed.
 
         // Print characters that appear only once, with spaces
         System.out.print("Unique characters: ");

@@ -30,31 +30,37 @@ public class CountVowelsAndConsonantsInString {
     END
 */
 
-        String str = "apple is fruit.1233";
+        String str = "apple is fruit.1233"; // Input can be provided by user
 
-        String str2 = str.replaceAll("[^a-z]", "").toLowerCase();
+        // Step 2: Transform the string
+        String str2 = str.toLowerCase().replaceAll("[^a-z]", "");
 
+        // Step 3: Initialize counters
         int vow = 0;
         int cons = 0;
 
-        StringBuilder stringBuilder = new StringBuilder();
-        StringBuilder stringBuilder1 = new StringBuilder();
+        StringBuilder vowelsList = new StringBuilder();
+        StringBuilder consonantsList = new StringBuilder();
 
-        for (int i =0; i<str2.length();i++) {
-            char ch = str2.charAt(i);
+
+        for (int i = 0; i < str2.length(); i++) {
+
+            char ch = str2.charAt(i); // Get the character at the current index
+
             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
                 vow++;
-                stringBuilder.append(ch).toString();
+
+                vowelsList.append(ch);
             } else {
                 cons++;
-                stringBuilder1.append(ch);
+                consonantsList.append(ch);
             }
         }
         // Step 6: Print the result
         System.out.println("Given string vowels: " + vow);
         System.out.println("Given string consonants: " + cons);
 
-        System.out.println("Given string vowels: " + stringBuilder.toString());
-        System.out.println("Given string consonants: " + stringBuilder1.toString());
+        System.out.println("Given string vowels: " + vowelsList.toString());
+        System.out.println("Given string consonants: " + consonantsList.toString());
     }
 }

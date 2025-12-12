@@ -7,8 +7,10 @@ public class CountOccurrencesEachCharterInString {
 
     public static void main(String[] args) {
 
-        String str = "Test Automation Java Automation";
+        String str = "Test Automation Java Automation"; // Original string
 
+
+        // Remove all whitespace characters and convert to lowercase
         str = str.replaceAll("\\s+", "").toLowerCase();
 
         System.out.println(str);

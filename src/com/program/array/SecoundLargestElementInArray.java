@@ -6,12 +6,14 @@ public class SecoundLargestElementInArray {
 
         int[] numbers = {12, 45, 67, 45, 89, 89, 23};
 
-        int largest = Integer.MIN_VALUE;
-        int Seclargest = Integer.MIN_VALUE;
+        int largest = Integer.MIN_VALUE; // Initialize largest to the smallest possible integer value
+        int Seclargest = Integer.MIN_VALUE; // Initialize Seclargest to the smallest possible integer value
 
-        for (int i = 0; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++) { // Iterate through each element in the array
+
             if (numbers[i] > largest) {
-                Seclargest = largest;
+                Seclargest = largest; // The previous largest becomes the second largest
+
                 largest = numbers[i];
             } /*else if (numbers[i] > Seclargest && numbers[i] != largest) {
                 Seclargest = numbers[i];

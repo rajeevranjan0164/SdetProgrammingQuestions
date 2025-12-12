@@ -14,12 +14,19 @@ public class CommonElementsInTwoArray {
 
 
 
-        Set<Integer> set = new HashSet<>();
-        Set<Integer> set1 = new HashSet<>();
+        // Create two sets to store elements from array1 and common elements
+        Set<Integer> set = new HashSet<>(); // Stores elements from array1 for efficient lookup
+        Set<Integer> set1 = new HashSet<>(); // Stores the common elements found
 
+
+        // Add all elements from array1 to the 'set' for quick checking
         for (int num : array1) {
             set.add(num);
         }
+        /**
+         * Iterate through the second array.
+         * If an element from array2 is present in 'set' (which contains elements from array1), add it to 'set1' (common elements).
+         */
 
         for (int num2 : array2) {
             if (set.contains(num2)) {

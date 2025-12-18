@@ -15,9 +15,7 @@ public class SecoundLargestElementInArray {
                 Seclargest = largest; // The previous largest becomes the second largest
 
                 largest = numbers[i];
-            } /*else if (numbers[i] > Seclargest && numbers[i] != largest) {
-                Seclargest = numbers[i];
-            }*/
+            }
         }
 
         System.out.println("Second Largest: " + Seclargest);

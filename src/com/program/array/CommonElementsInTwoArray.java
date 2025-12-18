@@ -11,9 +11,6 @@ public class CommonElementsInTwoArray {
         int[] array2 = {4, 5, 6, 7, 8};
 
 
-
-
-
         // Create two sets to store elements from array1 and common elements
         Set<Integer> set = new HashSet<>(); // Stores elements from array1 for efficient lookup
         Set<Integer> set1 = new HashSet<>(); // Stores the common elements found

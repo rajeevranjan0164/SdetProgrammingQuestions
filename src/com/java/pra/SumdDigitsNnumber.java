@@ -10,10 +10,11 @@ public class SumdDigitsNnumber {
         int num = 123456;
         String str = String.valueOf(num);
 
+
        int sum = 0;
         for (char chr : str.toCharArray()) {
                 //sum += chr - '0';
-                sum += Character.getNumericValue(chr);
+                sum = sum + Character.getNumericValue(chr);
         }
         System.out.println(sum);
 

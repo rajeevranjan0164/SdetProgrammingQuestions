@@ -11,6 +11,8 @@ public class ArrayReverse {
 
         // Create a new ArrayList to store the reversed elements.
         List<Integer> list = new ArrayList<>();
+
+        int sum = 0;
         
         // Loop through the original array in reverse order.
         for (int i=numArray.length-1;i>=0;i--) {
@@ -19,7 +21,7 @@ public class ArrayReverse {
         }
         
         // Print the list containing the reversed array.
-        System.out.println(list);
+        System.out.println(sum);
 
     }
 }

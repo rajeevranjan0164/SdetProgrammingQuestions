@@ -1,27 +1,32 @@
 package com.program.string;
 
-
 /**
- * This class demonstrates how to calculate the length of a string without using
- * the built-in `length()` method, by leveraging a `try-catch` block with `charAt()`.
- * It iterates through the string characters until an `IndexOutOfBoundsException` is caught.
+ * This program demonstrates an unconventional way to calculate string length
+ * by intentionally triggering an IndexOutOfBoundsException to find the end.
  */
 public class StringLengthWithoutMethodUsingCharAtTryCatch {
 
     public static void main(String[] args) {
         String str = "Automation";
-
         int length = 0;
-        try {
-            while (true) {                // Access character at current 'length' to check if it's within bounds
 
+        try {
+            // 1. Start an infinite loop to access characters one by one
+            while (true) {
+                // 2. Access the character at the current 'length' index
+                // This will throw an exception once 'length' reaches the string's actual size
                 str.charAt(length);
+                
+                // 3. If no exception occurred, increment the length and continue
                 length++;
             }
         } catch (IndexOutOfBoundsException e) {
-            // This exception is expected when we reach the end of the string
+            // 4. The exception is caught here when we go past the last character.
+            // At this exact moment, 'length' equals the total number of characters.
         }
 
-        System.out.println(length);
+        // 5. Print the final results
+        System.out.println("Original String: " + str);
+        System.out.println("Calculated Length (using try-catch): " + length);
     }
 }

@@ -1,31 +1,27 @@
 package com.program.string;
 
-
 public class StringLengthWithoutMethodUsingToCharArray {
 
     /**
-     * This method calculates the length of a string without using the `length()` method,
-     * by iterating over its characters obtained from `toCharArray()`.
+     * This program demonstrates how to calculate the length of a string 
+     * without using the built-in .length() method.
      */
     public static void main(String[] args) {
         String str = "Automation";
+        
+        // 1. Convert the string to a character array
+        char[] characters = str.toCharArray();
 
-        /**
-         * Initialize a counter to keep track of the string's length.
-         * This counter will be incremented for each character in the string.
-         */
-        int count =0;
+        // 2. Initialize a counter to manually track the number of characters
+        int length = 0;
 
-        /**
-         * Iterate through each character of the string using a for-each loop.
-         */
-        for (char ch : str.toCharArray()) {
-        /**
-         * Increment the counter for each character encountered.
-         */
-
-            count++;
+        // 3. Iterate through the array; increment the counter for each character found
+        for (char ch : characters) {
+            length++;
         }
-        System.out.println(count);
+
+        // 4. Print the final results
+        System.out.println("Original String: " + str);
+        System.out.println("Calculated Length: " + length);
     }
 }

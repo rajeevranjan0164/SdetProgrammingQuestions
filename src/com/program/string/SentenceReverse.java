@@ -29,11 +29,6 @@ public class SentenceReverse {
             }
             fromLastEmpty += " ";
         }
-
         System.out.println(fromLastEmpty);
-
-
-
-
     }
 }

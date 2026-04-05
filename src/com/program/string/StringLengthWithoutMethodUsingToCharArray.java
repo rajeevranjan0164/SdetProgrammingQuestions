@@ -1,7 +1,7 @@
 package com.program.string;
 
 
-public class StringLenthwithoutMethodUsingToCharArray {
+public class StringLengthWithoutMethodUsingToCharArray {
 
     /**
      * This method calculates the length of a string without using the `length()` method,

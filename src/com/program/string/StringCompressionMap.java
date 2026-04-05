@@ -3,7 +3,9 @@ package com.program.string;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StringCompressionMap {
+public class
+
+StringCompressionMap {
 
     /**
      * Compresses a given string by counting consecutive occurrences of characters.

@@ -1,6 +1,6 @@
 package com.program.string;
 
-public class findConsonantsSecoundApproch {
+public class FindConsonantsSecondApproach {
 
     public static void main(String[] args) {
         String str = "Hello World!";

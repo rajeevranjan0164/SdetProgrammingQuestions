@@ -3,7 +3,7 @@ package com.program.string;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CountVowelsAndConsonantsInStringSecoundWay {
+public class CountVowelsAndConsonantsInStringSecondWay {
 
     public static void main(String[] args) {
 

@@ -1,6 +1,6 @@
 package com.program.string;
 
-public class findConsonants {
+public class FindConsonants {
 
     /*
     START

@@ -14,7 +14,7 @@ package com.program.array;
     TIME COMPLEXITY: O(n) - Each element is checked once.
     SPACE COMPLEXITY: O(1) - No extra space used.
 */
-public class maxNumber {
+public class MaxNumber {
 
     public static void main(String[] args) {
 

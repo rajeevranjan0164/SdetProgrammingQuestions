@@ -11,11 +11,11 @@ Algorithm Explanation:
 Time Complexity: O(n)  -> Single loop iteration to calculate sum.
 Space Complexity: O(1) -> Only a few integer variables are used.
 */
-public class missingNumber {
+public class MissingNumber {
 
     public static void main(String[] args) {
         // Step 1: Define the array and the expected range
-        int[] nums = {1, 2, 4, 5, 6};;
+        int[] nums = {1, 2, 4, 5, 6};
         int n =nums.length+1; // The sequence should contain numbers from 1 to 8
 
         // Step 4: Compute the sum of numbers from 1 to n using formula

@@ -73,7 +73,7 @@ If the loop completes and no mismatches are found → it's a palindrome.
      */
     public static void main(String[] args) {
 
-        String str1 = "radarr";
+        String str1 = "radar";
 
         int left = 0;
         int right = str1.length() - 1;

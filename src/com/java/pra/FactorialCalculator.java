@@ -32,8 +32,8 @@ public class FactorialCalculator {
             System.out.println("Factorial is not defined for negative numbers.");
             return;
         }
-
         long factorial = 1;
+
 
         for (int i = 1; i <= n; i++) {
             factorial = factorial * i;

@@ -3,7 +3,7 @@ package com.program.string;
 import java.util.HashMap;
 import java.util.Map;
 
-public class repeatedCharacter {
+public class RepeatedCharacter {
 
     public static void main(String[] args) {
         String str = "programming"; // Example string

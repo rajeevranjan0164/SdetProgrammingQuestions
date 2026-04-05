@@ -8,7 +8,7 @@ public class EvenIndexedCharactersUsingStringBuilder {
 
         StringBuilder stringBuilder = new StringBuilder();
         //print odd for (int i=1;i<str.length();i+=2) {
-        for (int i=0;i<str.length();i+=2) {
+        for (int i=1;i<str.length();i+=2) {
             stringBuilder.append(str.charAt(i));
         }
 

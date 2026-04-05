@@ -11,22 +11,23 @@ public class VowelFinder {
         // Convert the string to lower case to handle both upper and lower case vowels
         str = str.toLowerCase();
 
-        // Define vowels
-        String vowels = "aeiou";
+        // Define vowels string for easy lookup
+        String vowels = "aeiout";
 
         // Iterate through each character of the string
-        // Check if the character is a letter and then if it's a vowel
-
-
         for (char ch : str.toCharArray()) {
+            // Check if the character is a letter first
             if (Character.isLetter(ch)) {
-
-                if (vowels.indexOf(ch) != -1)
-                    System.out.println("Found vowel: " + ch); // Print if the character is a vowel.
-                // If the character is a letter but not a vowel, print that it's not a vowel.
-                else
-                    System.out.println(ch + " is not a vowel.");
+                // indexOf(ch) returns the position of 'ch' in 'vowels'. 
+                // If it's not found, it returns -1.
+                if (vowels.indexOf(ch) != -1) {
+                    System.out.println("Found vowel: " + ch);
+                } 
+                // If it's a letter but not in the "aeiou" string, it's a consonant.
+                else {
+                    System.out.println(ch + " is not a vowel."+ch);
                 }
             }
         }
     }
+}

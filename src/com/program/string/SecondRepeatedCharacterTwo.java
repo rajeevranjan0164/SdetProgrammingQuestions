@@ -6,7 +6,7 @@ import java.util.Set;
 public class SecondRepeatedCharacterTwo {
 
     public static void main(String[] args) {
-        String str = "pr og ramming ";
+        String str = "programming";
 
         str.replaceAll("//s+","");
         System.out.println("remove space : "+str);

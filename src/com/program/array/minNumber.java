@@ -14,7 +14,7 @@ package com.program.array;
     TIME COMPLEXITY: O(n) - Each element is checked once.
     SPACE COMPLEXITY: O(1) - No extra space used.
 */
-public class minNumber {
+public class MinNumber {
 
     public static void main(String[] args) {
 
@@ -32,6 +32,6 @@ public class minNumber {
         }
         // Step 5: Print the minimum number
         System.out.println("Minimum number: " + min);
-        System.out.println("Minimum number: " + max);
+        System.out.println("Maximum number: " + max);
     }
 }

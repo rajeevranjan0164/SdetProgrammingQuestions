@@ -74,8 +74,6 @@ Are they equal? → Yes ✅
 
         Arrays.sort(char2);
 
-        Arrays.equals(chr1, char2);
-
         if (Arrays.equals(chr1, char2)) {
             System.out.println("Given String are Anagram");
         } else {

@@ -4,7 +4,7 @@ public class ReverseEachWordCharArray {
 
     public static void main(String[] args) {
 
-        String str = "programming";
+        String str = "programming raj";
 
         String[] splitString = str.split(" ");
 

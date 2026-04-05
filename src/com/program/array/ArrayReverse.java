@@ -21,7 +21,7 @@ public class ArrayReverse {
         }
         
         // Print the list containing the reversed array.
-        System.out.println(sum);
+        System.out.println(list);
 
     }
 }

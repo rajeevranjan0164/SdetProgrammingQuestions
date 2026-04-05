@@ -3,7 +3,7 @@ package com.program.string;
 import java.util.HashSet;
 import java.util.Set;
 
-public class FirstRepeatedCharacterSecApproch {
+public class FirstRepeatedCharacterSecondApproach {
 
     public static void main(String[] args) {
 

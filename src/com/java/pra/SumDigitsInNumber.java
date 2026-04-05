@@ -3,7 +3,7 @@ package com.java.pra;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SumdDigitsNnumber {
+public class SumDigitsInNumber {
 
     public static void main(String[] args) {
 

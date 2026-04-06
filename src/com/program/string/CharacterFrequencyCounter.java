@@ -3,35 +3,41 @@ package com.program.string;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This program counts the frequency of each character in a string using a HashMap.
+ * 
+ * --- DRY RUN (Example: "aba") ---
+ * String input = "aba"
+ * 
+ * 1. mapChar = {} (Empty HashMap)
+ * 2. Loop 1 (ch = 'a'): mapChar.put('a', 0 + 1) -> {a: 1}
+ * 3. Loop 2 (ch = 'b'): mapChar.put('b', 0 + 1) -> {a: 1, b: 1}
+ * 4. Loop 3 (ch = 'a'): mapChar.put('a', 1 + 1) -> {a: 2, b: 1}
+ * 
+ * Final Output (Iteration over Map): "a2b1" (Order may vary in HashMap)
+ */
 public class CharacterFrequencyCounter {
 
     public static void main(String[] args) {
-        /**
-         * This program counts the frequency of each character in a given string.
-         * For example, if the input is "aabbccddeea", the output will be a5b2c2d2e2.
-         */
+        
+        // 1. Declare the input string to be counted
         String input = "aabbccddeea";
 
-        // Create a HashMap to store character frequencies.
-        // The key will be the character and the value will be its count.
-        Map<Character,Integer> mapChar = new HashMap<>();
+        // 2. Initialize a HashMap to store characters as 'Keys' and their counts as 'Values'
+        Map<Character, Integer> mapChar = new HashMap<>();
 
-        // Iterate over each character in the input string.
-
+        // 3. Convert the string to a character array and iterate through each character
         for (char ch : input.toCharArray()) {
 
-            // If the character is already in the map, increment its count.
-            // Otherwise, add the character to the map with a count of 1.
+            // 4. Update the character's count in the map
+            // getOrDefault(ch, 0) returns the current count, or 0 if it's the first time seeing 'ch'
             mapChar.put(ch, mapChar.getOrDefault(ch, 0) + 1);
         }
 
-
-        // Iterate over the entries in the HashMap to print the character frequencies.
-        for (Map.Entry<Character,Integer> mapEnt : mapChar.entrySet()) {
-            /**
-             * Print the character and its frequency.
-             * The output format is character followed by its count (e.g., a5).
-             */
+        // 5. Iterate through the entries (key-value pairs) in the Map
+        for (Map.Entry<Character, Integer> mapEnt : mapChar.entrySet()) {
+            
+            // 6. Print the character (Key) followed by its frequency (Value) on the same line
             System.out.print(mapEnt.getKey().toString() + mapEnt.getValue().toString());
         }
     }

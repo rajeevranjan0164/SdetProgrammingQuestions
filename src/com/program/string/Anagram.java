@@ -1,84 +1,47 @@
 package com.program.string;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
+/**
+ * This program determines if two strings are anagrams.
+ * An anagram is a word or phrase formed by rearranging the letters of another word or phrase.
+ * 
+ * --- DRY RUN (Example: "Race" and "Care") ---
+ * 1. Normalize: "race" and "care"
+ * 2. To Char Array: ['r', 'a', 'c', 'e'] and ['c', 'a', 'r', 'e']
+ * 3. Sort Array 1: ['a', 'c', 'e', 'r']
+ * 4. Sort Array 2: ['a', 'c', 'e', 'r']
+ * 5. Compare: Arrays.equals() -> TRUE
+ * Final Result: "Given strings are Anagrams"
+ */
 public class Anagram {
 
-    /*
-             Pseudocode:
-             Input:
-             - Read two strings, str1 and str2.
-
-             Preprocess Strings:
-             - Remove all spaces from str1 and str2.
-             - Convert both strings to lowercase.
-
-             Convert Strings to Character Arrays:
-             - Convert str1 into a character array chr1.
-             - Convert str2 into a character array char2.
-
-             Sort Character Arrays:
-             - Sort the character array chr1.
-             - Sort the character array char2.
-
-             Compare Sorted Arrays:
-             - If chr1 and char2 are equal:
-                 - Print "Given strings are anagrams".
-             - Else:
-                 - Print "Given strings are not anagrams".
-         */
-
-    /*
-    1. Normalize the strings:
-Remove all spaces.
-
-Convert both strings to lowercase.
-
-2. Check length:
-If lengths differ → Not anagrams.
-
-3. Sort and compare:
-Sort both strings.
-
-If sorted strings are equal → Anagrams.
-     */
-
-    /*
-    ✅ Step 1: Convert to character arrays
-str1 → ['l', 'i', 's', 't', 'e', 'n']
-str2 → ['s', 'i', 'l', 'e', 'n', 't']
-✅ Step 2: Sort both arrays
-Sorted str1 → ['e', 'i', 'l', 'n', 's', 't']
-Sorted str2 → ['e', 'i', 'l', 'n', 's', 't']
-✅ Step 3: Compare sorted arrays
-Are they equal? → Yes ✅
-✅ Result:
-"listen" and "silent" are anagrams.
-
-     */
-
-
     public static void main(String[] args) {
+        
+        // 1. Declare the two strings to compare
         String str1 = "listen";
         String str2 = "silent";
 
-        String str3 = str1.replaceAll("\\s+", "").toLowerCase();
-        String str4 = str2.replaceAll("\\s+", "").toLowerCase();
+        // 2. Remove all spaces and convert to lowercase for uniform comparison
+        String cleanStr1 = str1.replaceAll("\\s+", "").toLowerCase();
+        String cleanStr2 = str2.replaceAll("\\s+", "").toLowerCase();
 
+        // 3. Convert both cleaned strings to character arrays
+        char[] charArray1 = cleanStr1.toCharArray();
+        char[] charArray2 = cleanStr2.toCharArray();
 
-        char[] chr1 = str3.toCharArray();
-        char[] char2 = str4.toCharArray();
+        // 4. Sort both character arrays alphabetically
+        // This is the key trick: if they have the same letters, they will sort the same way.
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
 
-        Arrays.sort(chr1);
-
-        Arrays.sort(char2);
-
-        if (Arrays.equals(chr1, char2)) {
-            System.out.println("Given String are Anagram");
+        // 5. Check if the sorted character arrays are identical
+        if (Arrays.equals(charArray1, charArray2)) {
+            // 6. If they match, they contain the exact same letters in different orders
+            System.out.println("Given strings are Anagrams");
         } else {
-            System.out.println("Given String are not Anagram");
+            // 7. If they don't match, they have different letters
+            System.out.println("Given strings are NOT Anagrams");
         }
-
     }
 }

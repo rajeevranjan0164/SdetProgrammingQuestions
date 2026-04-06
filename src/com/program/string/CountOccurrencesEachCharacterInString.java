@@ -3,45 +3,47 @@ package com.program.string;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This program counts the occurrences of each character in a string using a HashMap.
+ * 
+ * --- DRY RUN (Example: "A a") ---
+ * String str = "A a"
+ * 1. Step 1 (Cleanup): str = "A a".replaceAll("\\s+", "").toLowerCase() -> "aa"
+ * 
+ * 2. Loop 1 (ch = 'a'): map.getOrDefault('a', 0) + 1 -> 0 + 1. Map: {a=1}
+ * 3. Loop 2 (ch = 'a'): map.getOrDefault('a', 0) + 1 -> 1 + 1. Map: {a=2}
+ * 
+ * Final Output: {a=2}
+ */
 public class CountOccurrencesEachCharacterInString {
 
     public static void main(String[] args) {
 
-        String str = "Test Automation Java Automation"; // Original string
+        // 1. Declare the original input string to be processed
+        String str = "Test Automation Java Automation";
 
-
-        // Remove all whitespace characters and convert to lowercase
+        // 2. Normalize and clean the string:
+        //    - replaceAll("\\s+", "") removes all spaces
+        //    - toLowerCase() handles case-insensitivity
         str = str.replaceAll("\\s+", "").toLowerCase();
 
-        // System.out.println(str); // This line was commented out
-
-        /**
-         * A Map to store character occurrences.
-         * The key is the character and the value is its count.
-         */
+        // 3. Initialize a HashMap to store characters as 'Keys' and their total counts as 'Values'
         Map<Character, Integer> map = new HashMap<>();
 
-        /**
-         * Iterate over each character in the string and count its occurrences.
-         */
-
-        /**
-         * For each character, increment its count in the map. If the character is not already in the map, add it with a count of 1.
-         */
+        // 4. Iterate over each character in the normalized string
         for (char ch : str.toCharArray()) {
-            // Check if the character is already in the map
-            // If it is, increment its count
-            // If not, add it to the map with a count of 1
-
-
+            
+            // 5. Update the count for the current character in the map
+            // getOrDefault(ch, 0) starts at 0 if the character is new, then we add 1
             map.put(ch, map.getOrDefault(ch, 0) + 1);
-
         }
-        System.out.println(map);
+        
+        // 6. Print the entire map containing character counts
+        System.out.println("Full Count Map: " + map);
 
-        // Iterate through the map and print each character and its count
-        for (Map.Entry<Character, Integer> integerEntry : map.entrySet()) {
-            System.out.println(" " +integerEntry.getKey() + ":: "+integerEntry.getValue());
+        // 7. Iterate through the map entries and print each character and its total count
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            System.out.println(" " + entry.getKey() + " :: " + entry.getValue());
         }
     }
 }

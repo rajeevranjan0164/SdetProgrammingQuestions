@@ -3,82 +3,59 @@ package com.program.string;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * This program identifies and prints all words that appear more than once in a sentence.
+ * 
+ * --- DRY RUN (Example: "hi hello hi") ---
+ * 1. Words array: ["hi", "hello", "hi"]
+ * 2. Process "hi": Added to uniqueSet. [uniqueSet: {hi}]
+ * 3. Process "hello": Added to uniqueSet. [uniqueSet: {hi, hello}]
+ * 4. Process "hi": Already in uniqueSet! Added to duplicateWords. [duplicateWords: {hi}]
+ * Final Output: "hi "
+ */
 public class DuplicateWordsFinder {
-
-    /*
-    START
-    // Step 1: Input the string
-    str = "input string"
-
-    // Step 2: Convert the string to lowercase for case insensitivity
-    str = str.toLowerCase()
-
-    // Step 3: Split the string into words using whitespace as the delimiter
-    words = str.split("\\s+")
-
-    // Step 4: Create two empty HashSets to track unique and duplicate words
-    uniqueWords = new HashSet()
-    duplicateWords = new HashSet()
-
-    // Step 5: Iterate through each word in the array
-    FOR each word in words
-        // Step 6: Try to add the word to the uniqueWords HashSet
-        IF word is not added to the HashSet (i.e., add() returns false)
-            // Step 7: Word is a duplicate, add it to the duplicateWords HashSet
-            duplicateWords.add(word)
-
-    END FOR
-
-    // Step 8: Check if there are duplicates
-    IF duplicateWords is empty
-        PRINT "No duplicate words found."
-    ELSE
-        // Step 9: Print each duplicate word
-        FOR each word in duplicateWords
-            PRINT word
-
-    END IF
-
-    // The algorithm finishes processing the string
-END
-
-Explanation:
-- **Input**: The input string (`str`) is given.
-- **String Transformation**: The string is converted to lowercase to handle case insensitivity.
-- **Splitting**: The string is split into words based on whitespace.
-- **HashSets**: Two HashSets (`uniqueWords` and `duplicateWords`) are created. `uniqueWords` stores the words we've encountered, and `duplicateWords` stores those that appear more than once.
-- **Iteration**: We iterate over each word in the array and check if it already exists in `uniqueWords`. If it does, we add it to `duplicateWords`.
-- **Output**: The program prints the duplicate words in the order of their first occurrence. If no duplicates are found, it prints "No duplicate words found."
-*/
 
     public static void main(String[] args) {
 
+        // 1. Declare the input sentence
         String str = "hello world world hello java java Rajeev";
 
-        //System.out.println("Duplicate words in the string:");
+        // 2. Call the static method to find and print duplicates
         findDuplicates(str);
-
     }
 
     public static void findDuplicates(String str) {
 
-        String[] str1 = str.toLowerCase().split("\\s+");
+        // 3. Convert string to lowercase and split it into an array of words
+        // "\\s+" is a regex that handles one or more spaces
+        String[] words = str.toLowerCase().split("\\s+");
+
+        // 4. HashSet to keep track of all words encountered
         Set<String> uniqueSet = new HashSet<>();
+        
+        // 5. HashSet to store only the words that are repeats
         Set<String> duplicateWords = new HashSet<>();
 
-        for (String str2 : str1) {
-            if (!uniqueSet.add(str2)) {
-                duplicateWords.add(str2);
+        // 6. Iterate through the array of words
+        for (String word : words) {
+            
+            // 7. .add() returns false if the word is already in the uniqueSet
+            if (!uniqueSet.add(word)) {
+                
+                // 8. If it's a duplicate, add it to our duplicateWords collection
+                duplicateWords.add(word);
             }
         }
+
+        // 9. Check if we found any duplicates
         if (duplicateWords.isEmpty()) {
             System.out.println("No duplicate words found.");
         } else {
-            // Print duplicate words
+            // 10. Print the set of duplicate words found
+            System.out.println("Duplicate words found:");
             for (String word : duplicateWords) {
                 System.out.print(word + " ");
             }
         }
     }
-
 }

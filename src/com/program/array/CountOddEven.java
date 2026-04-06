@@ -1,40 +1,43 @@
 package com.program.array;
 
 /**
- * This class demonstrates how to count the number of odd and even elements in an integer array.
+ * This program counts the total number of even and odd integers in an array.
+ * 
+ * --- DRY RUN (Example: {1, 2, 3}) ---
+ * array = {1, 2, 3}, length = 3
+ * evenCount = 0, oddCount = 0
+ * 
+ * 1. i = 0 (val=1): (1 % 2 == 0) is FALSE. oddCount becomes 1.
+ * 2. i = 1 (val=2): (2 % 2 == 0) is TRUE. evenCount becomes 1.
+ * 3. i = 2 (val=3): (3 % 2 == 0) is FALSE. oddCount becomes 2.
+ * 
+ * Final Output: Even: 1, Odd: 2
  */
 public class CountOddEven {
 
-    /**
-     * The main method is the entry point of the program.
-     * It initializes an array, then iterates through it to count odd and even numbers,
-     * and finally prints the counts to the console.
-     *
-     * @param args Command line arguments (not used in this program).
-     */
     public static void main(String[] args) {
-        // Initialize an integer array with some sample values.
-        // This array will be used to count odd and even numbers.
-
+        
+        // 1. Declare and initialize an integer array with sample values
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        // Initialize counters for odd and even numbers to zero.
-        // These variables will store the total count of odd and even elements found in the array.
+        // 2. Initialize counters for odd and even elements
+        int oddCount = 0;
+        int evenCount = 0;
 
-        int oddCount = 0, evenCount = 0;
-
-
-        // Iterate through the array to check each element
-        // If an element is divisible by 2, it's even; otherwise, it's odd.
-        // Increment the respective counter.
-
-        for (int i=0; i<array.length;i++) {
-            if (array[i] % 2== 0) {
+        // 3. Start a loop to iterate through every index of the array
+        for (int i = 0; i < array.length; i++) {
+            
+            // 4. Check if the current element is divisible by 2 (even check)
+            if (array[i] % 2 == 0) {
+                // 5. If remainder is 0, increment the even counter
                 evenCount++;
             } else {
+                // 6. If remainder is not 0, increment the odd counter
                 oddCount++;
             }
         }
+        
+        // 7. Print the final calculated counts to the console
         System.out.println("Number of even elements: " + evenCount);
         System.out.println("Number of odd elements: " + oddCount);
     }

@@ -3,65 +3,60 @@ package com.program.string;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-    START
-
-    // Step 1: Input string
-    INPUT str  // Example: "programming"
-
-    // Step 2: Convert string to lowercase for uniformity
-    CONVERT str to lowercase
-
-    // Step 3: Create an empty HashMap to store character frequencies
-    CREATE HashMap charCount
-
-    // Step 4: Iterate through each character in str
-    FOR each character ch in str
-        IF ch is already in charCount
-            Increment the count of ch by 1
-        ELSE
-            Add ch to charCount with a count of 1
-    END FOR
-
-    // Step 5: Find and print the first non-repeated character along with its count
-    FOR each character ch in str
-        IF the count of ch is 1
-            PRINT "First non-repeated character: " + ch
-            PRINT "Count: " + count  // Count will always be 1
-            RETURN
-    END FOR
-
-    // Step 6: If no non-repeated character is found
-    PRINT "No non-repeated character found."
-
-    END
-*/
-
+/**
+ * This program identifies and prints the VERY FIRST character in a string
+ * that does not repeat anywhere else.
+ * 
+ * --- DRY RUN (Example: "programming") ---
+ * Step 1: Count Character Frequencies using HashMap
+ *    'p' -> 1, 'r' -> 2, 'o' -> 1, 'g' -> 2, 'a' -> 1, 'm' -> 2, 'i' -> 1, 'n' -> 1
+ * 
+ * Step 2: Iterate through the ORIGINAL STRING (to maintain order)
+ *    - Check 'p': Is count in Map == 1? 
+ *    - YES! Print 'p' and stop the loop immediately.
+ * Final Result: p
+ */
 public class FirstNonRepeatedCharacter {
 
     public static void main(String[] args) {
-        String str = "programming"; // Example string
-        printRepeatedCharacters(str);
+        
+        // 1. Define the input string
+        String str = "programming";
+        
+        // 2. Call the static method to find the first non-repeated character
+        findFirstNonRepeatedCharacter(str);
     }
 
-    public static void printRepeatedCharacters(String str) {
-        // Convert the string to lower case to handle case insensitivity
+    public static void findFirstNonRepeatedCharacter(String str) {
+        
+        // 3. Normalize the string to lowercase for case-insensitivity
         str = str.toLowerCase();
 
-        // Create a HashMap to store character frequencies
+        // 4. Create a HashMap to store character frequencies
         Map<Character, Integer> charCount = new HashMap<>();
 
-        // Populate the HashMap with character frequencies
+        // 5. Populate the HashMap with counts of each character
         for (char ch : str.toCharArray()) {
+            // 6. If character exists, increment count; else start at 1
             charCount.put(ch, charCount.getOrDefault(ch, 0) + 1);
         }
 
-        // Print characters with a count greater than 1
-        System.out.println("Repeated characters:");
-        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
-            if (entry.getValue() == 1) {
-                System.out.println(entry.getKey() + ": " + entry.getValue());
+        // 7. Iterate through the string AGAIN to find the FIRST non-repeated char
+        // We loop through the string (not the Map) to maintain the original order.
+        for (char ch : str.toCharArray()) {
+            
+            // 8. If the character's frequency in our Map is exactly 1
+            if (charCount.get(ch) == 1) {
+                
+                // 9. This must be the first character that doesn't repeat!
+                System.out.println("First non-repeated character: " + ch);
+                
+                // 10. Exit the loop and method immediately
+                return;
             }
         }
+        
+        // 11. If we finish the loop and never returned, no non-repeated character exists
+        System.out.println("No non-repeated character found.");
     }
 }

@@ -1,35 +1,53 @@
 package com.program.array;
 
-
-/*
-Algorithm Explanation:
-1. Calculate the sum of numbers from 1 to n using the formula: n*(n+1)/2
-2. Compute the sum of elements in the given array.
-3. Subtract the sum of the array from the total sum of numbers from 1 to n.
-4. The result will be the missing number.
-
-Time Complexity: O(n)  -> Single loop iteration to calculate sum.
-Space Complexity: O(1) -> Only a few integer variables are used.
-*/
+/**
+ * PROGRAM: FIND THE MISSING NUMBER IN A SEQUENCE (1 to N)
+ * 
+ * --- DRY RUN (Example: {1, 2, 4}, N should be 4) ---
+ * Input Array: {1, 2, 4}, Array length = 3
+ * Expected Count (n) = length + 1 = 4
+ * 
+ * 1. Calculate Expected Total Sum (1 + 2 + 3 + 4):
+ *    - totalSum = n * (n + 1) / 2 = 4 * (5) / 2 = 10
+ * 
+ * 2. Calculate Actual Sum of elements in array:
+ *    - sum = 1 + 2 + 4 = 7
+ * 
+ * 3. Find Missing Number:
+ *    - missingNumber = totalSum - sum = 10 - 7 = 3
+ * 
+ * Final Output: Missing number: 3
+ */
 public class MissingNumber {
 
     public static void main(String[] args) {
-        // Step 1: Define the array and the expected range
+        
+        // 1. Define an array that is missing one number in its sequence
         int[] nums = {1, 2, 4, 5, 6};
-        int n =nums.length+1; // The sequence should contain numbers from 1 to 8
+        
+        // 2. Determine what 'n' should be (the total count of numbers if none were missing)
+        // Since one number is missing, n is the array length + 1
+        int n = nums.length + 1; 
 
-        // Step 4: Compute the sum of numbers from 1 to n using formula
+        // 3. Calculate the sum of all numbers from 1 to 'n' using the formula: n*(n+1)/2
         int totalSum = n * (n + 1) / 2;
 
+        // 4. Initialize 'sum' to zero to calculate the total of the numbers we actually have
         int sum = 0;
-        // Step 5: Calculate the sum of elements present in the array
+        
+        // 5. Start a 'for-each' loop to add up every number currently in the 'nums' array
         for (int num : nums) {
+            
+            // 6. Add the current number to the running total 'sum'
             sum = sum + num;
-        }
+            
+        } // 7. End of loop
 
+        // 8. The missing number is the difference between the expected total and the actual sum
         int missingNumber = totalSum - sum;
 
-        // Step 3: Print the missing number
+        // 9. Print the missing number to the console
         System.out.println("Missing number: " + missingNumber);
-    }
-}
+        
+    } // 10. Closing brace for the main method
+} // 11. Closing brace for the class

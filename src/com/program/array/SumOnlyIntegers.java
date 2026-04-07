@@ -37,19 +37,19 @@ public class SumOnlyIntegers {
             
             // 4. Use a 'try' block to attempt converting the string to a number
             try {
-                
+
                 // 5. Integer.parseInt(str) converts the string (like "5") to an actual integer (5)
                 // 6. Add that integer value to our running 'sum'
                 sum += Integer.parseInt(str);
-                
-            } 
+
+            }
             // 7. If Integer.parseInt fails (e.g., if str is "a" or "#"), it throws an error
             catch (NumberFormatException e) {
                 
                 // 8. The 'catch' block catches that error, so the program doesn't crash
                 // 9. We do nothing here, which effectively "ignores" the non-numeric string
                 
-            } // 10. End of try-catch block
+            } // 10. End of try-catch block*/
             
         } // 11. End of the loop after checking all elements
 

@@ -30,6 +30,7 @@ public class Anagram {
         char[] charArray1 = cleanStr1.toCharArray();
         char[] charArray2 = cleanStr2.toCharArray();
 
+
         // 4. Sort both character arrays alphabetically
         // This is the key trick: if they have the same letters, they will sort the same way.
         Arrays.sort(charArray1);
